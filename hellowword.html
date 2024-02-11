@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><h1>heelo</h1></div>
+    <div id="root"><h3>farhat is here</h3></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        //   <div class="parent">
+        //     <div class="child1">
+        //         <h1>Hello this H1 tag</h1>
+        //         <h2>Hello this H2 tag</h2>
+        //     </div>
+        // <div class="child2">
+        //      <h1>Hello this H1 tag</h1>
+        //      <h2>Hello this H2 tag</h2>
+        //     </div>
+        //   </div>
+
+        const heading = React.createElement(
+            "div",
+            {id:"parent"},
+            [React.createElement(
+                "div",
+                {id:"child1"},
+                [
+                    React.createElement("h1",{},"this is H1 tag"),
+                    React.createElement("h2",{}, "this is H2 tag")
+                ]
+            ),
+            React.createElement(
+                "div",
+                {id:"child2"},
+                [
+                    React.createElement("h1",{},"this is H1 tag"),
+                    React.createElement("h2",{}, "this is H2 tag")
+                ]
+            ),
+        ]
+        );
+        console.log(heading, 'heading');
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        console.log(root, 'root');
+        root.render(heading);
+    </script>
+</body>
+
+</html>
